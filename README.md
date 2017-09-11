@@ -86,6 +86,10 @@ It will yield the following object:
 }
 ```
 
+## Wait! What if I don't use styled-components?
+
+No problem! I made this so I could use the extracted JS object as a theme but it's not specific to [styled-components][styled-components]. It should work the same with [glamorous][glamorous] too. Really you can use this plugin for any scenario where you need to convert Sass vars to JS.
+
 ## Help! It's not working for me.
 
 This project is open source. I've tried to make sure it works for a lot of use cases (read: mine) but if I missed yours, feel free to [open an issue][issues]. Better yet, [submit a PR][pr]! Seriously, any feedback and help is welcome.
@@ -96,3 +100,4 @@ This project is open source. I've tried to make sure it works for a lot of use c
 [theming]: https://www.styled-components.com/docs/advanced#theming
 [node-sass]: https://github.com/sass/node-sass#options
 [sass-extract]: https://github.com/jgranstrom/sass-extract
+[glamorous]: https://github.com/paypal/glamorous
