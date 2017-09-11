@@ -11,10 +11,10 @@ I work on a team that uses Sass. We've got a shared variables file that gets ref
 
 ## Cool! How do I get it?
 
-You'll need [sass-extract][sass-extract] along with this plugin.
+You'll need to install [sass-extract][sass-extract], [node-sass][node-sass], and this plugin.
 
 ```sh
-$ yarn add sass-extract sass-extract-js
+$ yarn add sass-extract node-sass sass-extract-js
 ```
 
 *(npm install works too)*

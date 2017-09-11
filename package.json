@@ -27,26 +27,10 @@
     "eslint-config-airbnb-base": "^11.3.2",
     "eslint-plugin-import": "^2.7.0",
     "jest": "^20.0.4",
+    "node-sass": "^4.5.3",
     "sass-extract": "^1.0.1"
   },
   "peerDependencies": {
     "sass-extract": "^1.0.1"
-  },
-  "eslintConfig": {
-    "extends": "airbnb-base",
-    "env": {
-      "browser": true,
-      "node": true,
-      "jest": true
-    },
-    "rules": {
-      "no-use-before-define": [
-        "error",
-        {
-          "functions": false,
-          "classes": true
-        }
-      ]
-    }
   }
 }
