@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sass-extract-js should convert basic SASS vars 1`] = `
+Object {
+  "boolean": true,
+  "builtinFunc": "rgb(255, 51, 51)",
+  "calculated": 200,
+  "customFunc": "rgb(255, 0, 0)",
+  "hexColor": "rgb(240, 240, 240)",
+  "importantStyle": "10px !important",
+  "inline": 100,
+  "mixedList": "1px solid rgb(0, 0, 0)",
+  "mixinA": "mixin-variable",
+  "mixinB": 456,
+  "namedColor": "rgb(255, 0, 0)",
+  "nestedGlobal": "100px",
+  "null": null,
+  "number": 100,
+  "numberList": "0 10px 1em 10%",
+  "numberWithUnit": "100px",
+  "quotedString": "quoted",
+  "rgbColor": "rgb(255, 255, 255)",
+  "rgbaColor": "rgba(255, 255, 255, 0.5)",
+  "stringList": "'Helvetica', 'Arial', sans-serif",
+  "unquotedString": "string",
+  "valueMap": Object {
+    "keyOne": "2em",
+    "keyThree": false,
+    "keyTwo": "key",
+  },
+}
+`;
+
+exports[`sass-extract-js should convert keys to camelCase 1`] = `
+Object {
+  "myCoolVar": "400px",
+  "myOtherVAr": "300px",
+  "myVar": "500px",
+  "myVar2": "600px",
+  "myVar3": "700px",
+}
+`;
+
+exports[`sass-extract-js should handle imports 1`] = `
+Object {
+  "importedVar": true,
+  "myVar": "150px",
+}
+`;
+
+exports[`sass-extract-js should pass sass options through 1`] = `
+Object {
+  "myVar": "100px",
+  "nestedVar": false,
+}
+`;

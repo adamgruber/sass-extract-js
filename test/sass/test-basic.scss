@@ -1,0 +1,52 @@
+@mixin mixinA {
+  $mixinA: 'mixin-variable' !global;
+}
+
+@mixin mixinB($param: 123) {
+  $mixinB: $param !global;
+}
+
+@function get-color() {
+  @return red;
+}
+
+// Basic Data Types
+$number: 100;
+$numberWithUnit: 100px;
+$unquotedString: string;
+$quotedString: 'quoted';
+$namedColor: red;
+$hexColor: #f0f0f0;
+$rgbColor: rgb(255, 255, 255);
+$rgbaColor: rgba(255, 255, 255, 0.5);
+$boolean: true;
+$null: null;
+$stringList: 'Helvetica', 'Arial', sans-serif;
+$numberList: 0 10px 1em 10%;
+$mixedList: 1px solid black;
+$valueMap: (
+  key_one: 2em,
+  key-two: 'key',
+  keyThree: false
+);
+$customFunc: get-color();
+$builtinFunc: lighten($namedColor, 10%);
+
+// Use Cases
+$importantStyle: 10px !important;
+$calculated: $number * 2;
+
+div {
+  $nested: 100px;
+  $nestedGlobal: 100px !global;
+  @include mixinA();
+  @include mixinB(456);
+}
+
+// Comments
+// Test $test: black;
+$inline: $number; // Comment
+/* 
+$block: 2em;
+$block2: 'block';
+*/
