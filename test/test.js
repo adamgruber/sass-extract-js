@@ -7,6 +7,7 @@ const testfiles = {
   camel: path.resolve(__dirname, './sass/test-opts-camel.scss'),
   sassOpts: path.resolve(__dirname, './sass/test-opts-sass.scss'),
   import: path.resolve(__dirname, './sass/test-import.scss'),
+  empty: path.resolve(__dirname, './sass/test-empty.scss'),
 };
 
 const getVars = (file, compileOpts = {}) =>
@@ -23,6 +24,10 @@ describe('sass-extract-js', () => {
 
   it('should handle imports', () => {
     expect(getVars(testfiles.import)).toMatchSnapshot();
+  });
+
+  it('should handle file with no variables', () => {
+    expect(getVars(testfiles.empty)).toMatchSnapshot();
   });
 
   it('should pass sass options through', () => {

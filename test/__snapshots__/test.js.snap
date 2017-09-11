@@ -41,6 +41,8 @@ Object {
 }
 `;
 
+exports[`sass-extract-js should handle file with no variables 1`] = `Object {}`;
+
 exports[`sass-extract-js should handle imports 1`] = `
 Object {
   "importedVar": true,
