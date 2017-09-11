@@ -10,6 +10,9 @@
     "theme",
     "css-in-js"
   ],
+  "engines": {
+    "node": ">=6"
+  },
   "main": "index.js",
   "scripts": {
     "lint": "eslint lib test",
