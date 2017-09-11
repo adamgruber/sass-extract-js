@@ -35,5 +35,10 @@
   },
   "peerDependencies": {
     "sass-extract": "^1.0.1"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coverageReporters": ["lcov"]
   }
 }
