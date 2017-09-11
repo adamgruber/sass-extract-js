@@ -1,0 +1,52 @@
+{
+  "name": "sass-extract-js",
+  "version": "0.1.0",
+  "description": "Plugin for sass-extract to convert Sass variables into a plain JS object",
+  "keywords": [
+    "sass",
+    "sass-extract",
+    "js",
+    "styled-components",
+    "theme",
+    "css-in-js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint lib test",
+    "test": "jest"
+  },
+  "repository": "git@github.com:adamgruber/sass-extract-js.git",
+  "bugs": "https://github.com/adamgruber/sass-extract-js/issues",
+  "author": "Adam Gruber <adamgruber@me.com>",
+  "license": "MIT",
+  "dependencies": {
+    "camel-case": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0 || ^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^20.0.4",
+    "sass-extract": "^1.0.1"
+  },
+  "peerDependencies": {
+    "sass-extract": "^1.0.1"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "no-use-before-define": [
+        "error",
+        {
+          "functions": false,
+          "classes": true
+        }
+      ]
+    }
+  }
+}
