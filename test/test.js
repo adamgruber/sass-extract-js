@@ -1,6 +1,6 @@
 const path = require('path');
 const sassExtract = require('sass-extract');
-const js = require('../index');
+const createPlugin = require('../lib/plugin');
 
 const testfiles = {
   basic: path.resolve(__dirname, './sass/test-basic.scss'),
@@ -10,8 +10,11 @@ const testfiles = {
   empty: path.resolve(__dirname, './sass/test-empty.scss'),
 };
 
-const getVars = (file, compileOpts = {}) =>
-  sassExtract.renderSync(Object.assign({}, { file }, compileOpts), { plugins: [js] }).vars;
+const getVars = (file, compileOpts = {}, pluginInstance) =>
+  sassExtract.renderSync(
+    Object.assign({}, { file }, compileOpts),
+    { plugins: [pluginInstance || path.resolve('../sass-extract-js')] },
+  ).vars;
 
 describe('sass-extract-js', () => {
   it('should convert basic SASS vars', () => {
@@ -35,5 +38,11 @@ describe('sass-extract-js', () => {
       includePaths: [path.join(__dirname, 'sass', 'nested')],
     };
     expect(getVars(testfiles.sassOpts, opts)).toMatchSnapshot();
+  });
+
+  describe('options', () => {
+    it('should NOT convert keys to camelCase when options.camelCase is false', () => {
+      expect(getVars(testfiles.camel, {}, createPlugin({ camelCase: false }))).toMatchSnapshot();
+    });
   });
 });

@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`sass-extract-js options should NOT convert keys to camelCase when options.camelCase is false 1`] = `
+Object {
+  "MY-VAR": "500px",
+  "My-Cool_var": "400px",
+  "my-var": "200px",
+  "myVar": 0,
+  "my__var--3": "700px",
+  "my_other_vAr": "300px",
+  "my_var": "200px",
+  "my_var_2": "600px",
+}
+`;
+
 exports[`sass-extract-js should convert basic SASS vars 1`] = `
 Object {
   "boolean": true,
