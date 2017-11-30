@@ -18,7 +18,8 @@
     "lib"
   ],
   "scripts": {
-    "lint": "eslint lib test",
+    "lint": "eslint lib test sass-extract-js.js",
+    "tdd": "jest --watch",
     "test": "jest"
   },
   "repository": "git@github.com:adamgruber/sass-extract-js.git",
@@ -42,6 +43,9 @@
   "jest": {
     "collectCoverage": true,
     "coverageDirectory": "./coverage",
-    "coverageReporters": ["text", "lcov"]
+    "coverageReporters": [
+      "text",
+      "lcov"
+    ]
   }
 }
