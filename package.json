@@ -13,7 +13,10 @@
   "engines": {
     "node": ">=6"
   },
-  "main": "index.js",
+  "main": "sass-extract-js.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "lint": "eslint lib test",
     "test": "jest"
