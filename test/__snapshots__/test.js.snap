@@ -1,6 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sass-extract-js options should NOT convert keys to camelCase when options.camelCase is false 1`] = `
+exports[`sass-extract-js options plugin instance with options should NOT convert keys to camelCase 1`] = `
+Object {
+  "MY-VAR": "500px",
+  "My-Cool_var": "400px",
+  "my-var": "200px",
+  "myVar": 0,
+  "my__var--3": "700px",
+  "my_other_vAr": "300px",
+  "my_var": "200px",
+  "my_var_2": "600px",
+}
+`;
+
+exports[`sass-extract-js options plugin instance without options should NOT convert keys to camelCase 1`] = `
+Object {
+  "MY-VAR": "500px",
+  "My-Cool_var": "400px",
+  "my-var": "200px",
+  "myVar": 0,
+  "my__var--3": "700px",
+  "my_other_vAr": "300px",
+  "my_var": "200px",
+  "my_var_2": "600px",
+}
+`;
+
+exports[`sass-extract-js options plugin name should NOT convert keys to camelCase 1`] = `
 Object {
   "MY-VAR": "500px",
   "My-Cool_var": "400px",
@@ -59,7 +85,7 @@ exports[`sass-extract-js should handle file with no variables 1`] = `Object {}`;
 exports[`sass-extract-js should handle imports 1`] = `
 Object {
   "importedVar": true,
-  "myVar": "150px",
+  "myVar": "100px",
 }
 `;
 
