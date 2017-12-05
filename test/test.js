@@ -10,10 +10,10 @@ const testfiles = {
   empty: path.resolve(__dirname, './sass/test-empty.scss'),
 };
 
-const getVars = (file, compileOpts = {}, pluginInstance) =>
+const getVars = (file, compileOpts = {}, plugin) =>
   sassExtract.renderSync(
     Object.assign({}, { file }, compileOpts),
-    { plugins: [pluginInstance || path.resolve('../sass-extract-js')] },
+    { plugins: [plugin || path.resolve('../sass-extract-js')] },
   ).vars;
 
 describe('sass-extract-js', () => {
@@ -41,8 +41,31 @@ describe('sass-extract-js', () => {
   });
 
   describe('options', () => {
-    it('should NOT convert keys to camelCase when options.camelCase is false', () => {
-      expect(getVars(testfiles.camel, {}, createPlugin({ camelCase: false }))).toMatchSnapshot();
+    const shouldNotConvert = pluginInst => (
+      it('should NOT convert keys to camelCase', () => {
+        expect(getVars(testfiles.camel, null, pluginInst)).toMatchSnapshot();
+      })
+    );
+
+    describe('plugin instance with options', () => {
+      const inst = createPlugin({ camelCase: false });
+      shouldNotConvert(inst);
+    });
+
+    describe('plugin instance without options', () => {
+      const inst = {
+        plugin: createPlugin(),
+        options: { camelCase: false },
+      };
+      shouldNotConvert(inst);
+    });
+
+    describe('plugin name', () => {
+      const inst = {
+        plugin: path.resolve('../sass-extract-js'),
+        options: { camelCase: false },
+      };
+      shouldNotConvert(inst);
     });
   });
 });

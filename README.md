@@ -95,10 +95,20 @@ Option Name | Default | Description
 `camelCase` | true    | Should SASS variable names be converted to camelCase
 
 ### Options Usage
+#### sass-extract Plugin Options
+As of sass-extract 2.0.0, options can be passed to plugins. Here's how:
+
+```js
+const rendered = sassExtract.renderSync({
+  file: './path/to/vars.scss'
+}, {
+  plugins: [{ plugin: 'sass-extract-js', options: { camelCase: false } }]
+});
+```
 
 #### Plugin Instance
 
-Currently there is no way to pass plugin options through sass-extract's render or extract api. However, you *can* pass a plugin instance directly inside the plugins array instead of a string. Here's how to do it:
+You can also create a plugin instance with your desired options and pass the instance directly inside the plugins array.
 
 ```js
 // Import the plugin factory directly
