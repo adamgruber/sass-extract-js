@@ -11,7 +11,7 @@ I work on a team that uses Sass. We've got a shared variables file that gets ref
 
 ## Cool! How do I get it?
 
-You'll need to install [sass-extract][sass-extract], [node-sass][node-sass], and this plugin.
+You'll need to install [sass-extract][sass-extract], [sass-extract-loader][sass-extract-loader], [node-sass][node-sass], and this plugin.
 
 ```sh
 $ yarn add sass-extract node-sass sass-extract-js
@@ -21,23 +21,15 @@ $ yarn add sass-extract node-sass sass-extract-js
 
 ## Nice! How do I use it?
 
-Wrap your App in a ThemeProvider component like this:
+Assuming you're using webpack, you'll need to use sass-extract-loader to require/transform your sass variables file. Then you can pass the styles as a theme via a ThemeProvider component like this:
 
 ```jsx
-// Import `sass-extract` library
-import sassExtract from 'sass-extract';
-
-// Call the `renderSync` function with the path to your Sass file
-// and specify the `sass-extract-js` plugin
-const rendered = sassExtract.renderSync({
-  file: './path/to/vars.scss'
-}, {
-  plugins: ['sass-extract-js']
-});
+// Require your sass variables using sass-extract-loader and specify the plugin
+const theme = require('sass-extract-loader?{"plugins":["sass-extract-js"]}!./path/to/vars.scss');
 
 // Pass the vars into your ThemeProvider component
 render(
-  <ThemeProvider theme={rendered.vars}>
+  <ThemeProvider theme={theme}>
     <App />
   </ThemeProvider>
 );
@@ -49,7 +41,7 @@ Then use themes in your styled components:
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background-color: ${props => props.theme.primary}
+  background-color: ${p => p.theme.primary}
 `;
 
 ```
@@ -136,7 +128,7 @@ If, for some reason, you don't want to use this package as a sass-extract plugin
 import transformVars from 'sass-extract-js/lib/transformVars';
 
 // Call the function, passing in your options
-const trasformed = transformVars(objectWithExtractedStyles, { camelCase: false });
+const transformed = transformVars(objectWithExtractedStyles, { camelCase: false });
 ```
 
 
@@ -158,4 +150,5 @@ MIT
 [theming]: https://www.styled-components.com/docs/advanced#theming
 [node-sass]: https://github.com/sass/node-sass#options
 [sass-extract]: https://github.com/jgranstrom/sass-extract
+[sass-extract-loader]: https://github.com/jgranstrom/sass-extract-loader
 [glamorous]: https://github.com/paypal/glamorous
