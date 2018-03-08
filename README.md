@@ -14,7 +14,7 @@ I work on a team that uses Sass. We've got a shared variables file that gets ref
 You'll need to install [sass-extract][sass-extract], [sass-extract-loader][sass-extract-loader], [node-sass][node-sass], and this plugin.
 
 ```sh
-$ yarn add sass-extract node-sass sass-extract-js
+$ yarn add sass-extract sass-extract-loader node-sass sass-extract-js
 ```
 
 *(npm install works too)*
@@ -65,7 +65,7 @@ $line-height: $base-font-size * 1.8;
 It will yield the following object:
 
 ```js
-{ 
+{
   primary: 'rgb(255, 202, 77)',
   seondary: 'rgb(26, 147, 200)',
   primaryLight: 'rgb(255, 232, 179)',
@@ -82,7 +82,7 @@ It will yield the following object:
 
 Everybody loves options and we've got one:
 
-Option Name | Default | Description 
+Option Name | Default | Description
 :---------- | :------ | :----------
 `camelCase` | true    | Should SASS variable names be converted to camelCase
 
