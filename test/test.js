@@ -10,11 +10,10 @@ const testfiles = {
   empty: path.resolve(__dirname, './sass/test-empty.scss'),
 };
 
-const getVars = (file, compileOpts = {}, plugin) =>
-  sassExtract.renderSync(
-    Object.assign({}, { file }, compileOpts),
-    { plugins: [plugin || path.resolve('../sass-extract-js')] },
-  ).vars;
+const getVars = (file, compileOpts = {}, plugin) => sassExtract.renderSync(
+  Object.assign({}, { file }, compileOpts),
+  { plugins: [plugin || path.resolve('../sass-extract-js')] },
+).vars;
 
 describe('sass-extract-js', () => {
   it('should convert basic SASS vars', () => {
