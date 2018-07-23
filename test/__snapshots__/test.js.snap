@@ -10,6 +10,11 @@ Object {
   "my_other_vAr": "300px",
   "my_var": "200px",
   "my_var_2": "600px",
+  "value-Map": Object {
+    "my-var5": "900px",
+    "my__var--6": "1000px",
+    "my_var4": "800px",
+  },
 }
 `;
 
@@ -23,6 +28,11 @@ Object {
   "my_other_vAr": "300px",
   "my_var": "200px",
   "my_var_2": "600px",
+  "value-Map": Object {
+    "my-var5": "900px",
+    "my__var--6": "1000px",
+    "my_var4": "800px",
+  },
 }
 `;
 
@@ -36,6 +46,11 @@ Object {
   "my_other_vAr": "300px",
   "my_var": "200px",
   "my_var_2": "600px",
+  "value-Map": Object {
+    "my-var5": "900px",
+    "my__var--6": "1000px",
+    "my_var4": "800px",
+  },
 }
 `;
 
@@ -77,6 +92,11 @@ Object {
   "myVar": "500px",
   "myVar2": "600px",
   "myVar3": "700px",
+  "valueMap": Object {
+    "myVar4": "800px",
+    "myVar5": "900px",
+    "myVar6": "1000px",
+  },
 }
 `;
 
